@@ -7,7 +7,7 @@ public class IncomeTaxRunnerUSA {
         double income = input.nextDouble();
 
         int status;
-        System.out.print("Are you married? (Y\\N)");
+        System.out.print("Are you married? (Y\\N): ");
         String relation = input.next();
         if(relation.equals("Y")){
             status = Constants.MARRIED;
@@ -15,6 +15,7 @@ public class IncomeTaxRunnerUSA {
         else {
             status = Constants.SINGLE;
         }
-        IncomeTaxCalculationUSA
+        IncomeTaxCalculationUSA user1 = new IncomeTaxCalculationUSA(income,status);
+        System.out.println("Tax: " + user1.getTax());
     }
 }
